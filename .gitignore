@@ -32,3 +32,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+gradle
+sharedLibrary/build
+simpleWallet/build
+
