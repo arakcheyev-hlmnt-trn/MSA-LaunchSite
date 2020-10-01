@@ -1,0 +1,178 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: simple-wallet-7cf976d999-bl5pz
+  generateName: simple-wallet-7cf976d999-
+  namespace: default
+  selfLink: /api/v1/namespaces/default/pods/simple-wallet-7cf976d999-bl5pz
+  uid: ef574ce5-e2ea-49b6-bac1-ce5a4a2c242e
+  resourceVersion: '11341'
+  creationTimestamp: '2020-10-01T08:27:05Z'
+  labels:
+    app: simple-wallet
+    pod-template-hash: 7cf976d999
+  ownerReferences:
+    - apiVersion: apps/v1
+      kind: ReplicaSet
+      name: simple-wallet-7cf976d999
+      uid: 12dce6a9-af40-44df-8dfa-f13e6924ece7
+      controller: true
+      blockOwnerDeletion: true
+  managedFields:
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2020-10-01T08:27:05Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:generateName': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:pod-template-hash': {}
+          'f:ownerReferences':
+            .: {}
+            'k:{"uid":"12dce6a9-af40-44df-8dfa-f13e6924ece7"}':
+              .: {}
+              'f:apiVersion': {}
+              'f:blockOwnerDeletion': {}
+              'f:controller': {}
+              'f:kind': {}
+              'f:name': {}
+              'f:uid': {}
+        'f:spec':
+          'f:containers':
+            'k:{"name":"simple-wallet"}':
+              .: {}
+              'f:image': {}
+              'f:imagePullPolicy': {}
+              'f:name': {}
+              'f:resources': {}
+              'f:terminationMessagePath': {}
+              'f:terminationMessagePolicy': {}
+          'f:dnsPolicy': {}
+          'f:enableServiceLinks': {}
+          'f:restartPolicy': {}
+          'f:schedulerName': {}
+          'f:securityContext': {}
+          'f:terminationGracePeriodSeconds': {}
+    - manager: kubelet
+      operation: Update
+      apiVersion: v1
+      time: '2020-10-01T09:10:21Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:conditions':
+            'k:{"type":"ContainersReady"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Initialized"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Ready"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+          'f:containerStatuses': {}
+          'f:hostIP': {}
+          'f:phase': {}
+          'f:podIP': {}
+          'f:podIPs':
+            .: {}
+            'k:{"ip":"172.18.0.5"}':
+              .: {}
+              'f:ip': {}
+          'f:startTime': {}
+spec:
+  volumes:
+    - name: default-token-hqwvh
+      secret:
+        secretName: default-token-hqwvh
+        defaultMode: 420
+  containers:
+    - name: simple-wallet
+      image: 'docker.io/library/simple-wallet:0.0.1-SNAPSHOT'
+      resources: {}
+      volumeMounts:
+        - name: default-token-hqwvh
+          readOnly: true
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
+  terminationGracePeriodSeconds: 30
+  dnsPolicy: ClusterFirst
+  serviceAccountName: default
+  serviceAccount: default
+  nodeName: minikube
+  securityContext: {}
+  schedulerName: default-scheduler
+  tolerations:
+    - key: node.kubernetes.io/not-ready
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/unreachable
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+  priority: 0
+  enableServiceLinks: true
+  preemptionPolicy: PreemptLowerPriority
+status:
+  phase: Running
+  conditions:
+    - type: Initialized
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-10-01T08:27:06Z'
+    - type: Ready
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-10-01T09:10:21Z'
+    - type: ContainersReady
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-10-01T09:10:21Z'
+    - type: PodScheduled
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-10-01T08:27:05Z'
+  hostIP: 172.17.0.2
+  podIP: 172.18.0.5
+  podIPs:
+    - ip: 172.18.0.5
+  startTime: '2020-10-01T08:27:06Z'
+  containerStatuses:
+    - name: simple-wallet
+      state:
+        running:
+          startedAt: '2020-10-01T09:10:15Z'
+      lastState:
+        terminated:
+          exitCode: 255
+          reason: Error
+          startedAt: '2020-10-01T08:27:09Z'
+          finishedAt: '2020-10-01T09:00:52Z'
+          containerID: >-
+            docker://a6ac47452517cf9a5fa06711eb4d6f3da004c7810db3717f80d5d52ad5d4dce8
+      ready: true
+      restartCount: 1
+      image: 'simple-wallet:0.0.1-SNAPSHOT'
+      imageID: >-
+        docker://sha256:55c32c6702eb5ead344dcd324a2bb6e53c4eb00d04da755ed9ee59b0dddccc16
+      containerID: >-
+        docker://f75702f350fca388dc0945edf385711b9d2a70ad7ab7bde787b8191b23638124
+      started: true
+  qosClass: BestEffort

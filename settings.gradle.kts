@@ -1,3 +1,3 @@
 rootProject.name = "Graph_MSA"
-include("sharedLibrary")
-include("simpleWallet")
+include("shared-library")
+include("simple-wallet")

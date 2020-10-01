@@ -25,7 +25,7 @@ val snippetsDir by extra { file("build/generated-snippets") }
 extra["springCloudVersion"] = "Hoxton.SR8"
 
 dependencies {
-    implementation(project(":sharedLibrary"))
+//    implementation(project(":shared-library"))
 
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
